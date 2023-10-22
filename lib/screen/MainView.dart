@@ -9,87 +9,142 @@ class MainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white12,
-      child: Center(
-        child: Column(
-          children: [
-            Container(
-              height: 100,
-              color: Colors.amber,
-            ),
-            Expanded(
-                flex: 1,
+      width: double.infinity,
+      height: double.infinity,
+      color: Colors.black,
+      child: FittedBox(
+        fit: BoxFit.fill,
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              FittedBox(
+                fit: BoxFit.fill,
                 child: Container(
-                  child: GridView.count(
-                    padding: const EdgeInsets.all(20),
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    children: <Widget>[
-                      ButtonComponent(
-                          value: "7",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "8",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "9",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "+",
-                          color: Colors.amber,
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "4",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "5",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "6",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "x",
-                          color: Colors.amber,
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "1",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "2",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "3",
-                          color: const Color.fromARGB(1, 202, 202, 206),
-                          radius: 100,
-                          onPressed: () => {}),
-                      ButtonComponent(
-                          value: "-",
-                          color: Colors.amber,
-                          radius: 100,
-                          onPressed: () => {}),
-                    ],
+                  width: double.infinity,
+                  color: Colors.amber,
+                  child: const Text("Hello"),
+                ),
+              ),
+              Row(
+                children: [
+                  ButtonComponent(
+                    value: "8",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
                   ),
-                ))
-          ],
+                  ButtonComponent(
+                    value: "7",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "9",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "+",
+                    color: Colors.amber,
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ButtonComponent(
+                    value: "4",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "5",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "6",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "x",
+                    color: Colors.amber,
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  ButtonComponent(
+                    value: "1",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "2",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "3",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "-",
+                    color: Colors.amber,
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ButtonComponent(
+                    value: "0",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: ".",
+                    color: const Color.fromARGB(255, 202, 202, 206),
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "c",
+                    color: Colors.amber,
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                  ButtonComponent(
+                    value: "=",
+                    color: Colors.amber,
+                    radius: 100,
+                    onPressed: () => {},
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
