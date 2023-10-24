@@ -23,14 +23,14 @@ class _MainViewState extends State<MainView> {
     } else if (value == "=") {
       double? result = resolve(inputText);
       setState(() {
-        solved = !solved;
+        solved = true;
         operationText = (result == null) ? "No valido" : inputText.toString();
         inputText = (result == null) ? "" : result.toString();
       });
     } else {
       setState(() {
         if (solved) {
-          solved = !solved;
+          solved = false;
           inputText = value.toString();
         } else {
           inputText += value.toString();
