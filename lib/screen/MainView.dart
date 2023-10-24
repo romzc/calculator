@@ -16,7 +16,7 @@ class _MainViewState extends State<MainView> {
   ScrollController scrollController = ScrollController();
 
   void handlePressButton(String value) {
-    if (value == "c") {
+    if (value == "Limpiar") {
       setState(() {
         inputText = "";
       });
@@ -24,8 +24,8 @@ class _MainViewState extends State<MainView> {
       double? result = resolve(inputText);
       setState(() {
         solved = !solved;
-        operationText = inputText.toString();
-        inputText = result == null ? "" : result.toString();
+        operationText = (result == null) ? "No valido" : inputText.toString();
+        inputText = (result == null) ? "" : result.toString();
       });
     } else {
       setState(() {
@@ -41,14 +41,16 @@ class _MainViewState extends State<MainView> {
   }
 
   double? resolve(String operation) {
-    if (operation.isEmpty) return null;
-    Parser p = Parser();
-    Expression exp = p.parse(operation);
-
-    ContextModel cm = ContextModel();
-    double result = exp.evaluate(EvaluationType.REAL, cm);
-
-    return result;
+    try {
+      if (operation.isEmpty) return null;
+      Parser p = Parser();
+      Expression exp = p.parse(operation);
+      ContextModel cm = ContextModel();
+      double result = exp.evaluate(EvaluationType.REAL, cm);
+      return result;
+    } catch (e) {
+      return null;
+    }
   }
 
   @override
@@ -70,6 +72,12 @@ class _MainViewState extends State<MainView> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: <Widget>[
+                Button(
+                  value: "Limpiar",
+                  radius: 0,
+                  onPressed: handlePressButton,
+                  boxDecoration: const BoxDecoration(color: Colors.amber),
+                ),
                 Expanded(
                   flex: 2,
                   child: Container(
@@ -298,7 +306,7 @@ class _MainViewState extends State<MainView> {
                         child: Button(
                           boxDecoration:
                               const BoxDecoration(color: Colors.amber),
-                          value: "c",
+                          value: "=",
                           radius: 100,
                           onPressed: handlePressButton,
                         ),
@@ -309,7 +317,7 @@ class _MainViewState extends State<MainView> {
                         child: Button(
                           boxDecoration:
                               const BoxDecoration(color: Colors.amber),
-                          value: "=",
+                          value: "/",
                           radius: 100,
                           onPressed: handlePressButton,
                         ),
